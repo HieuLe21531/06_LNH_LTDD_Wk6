@@ -11,27 +11,27 @@ export default function Screen2(props) {
   const DATA= [
     {
       id: 1,
-      img: "../Lab6/assets/img/giacchuyen 1.png",
+      img: <Image resizeMode="contain" style={styles.img} source={require('./assets/img/giacchuyen_1.png')}></Image>
     },
     {
       id: 2,
-      img: "../Lab6/assets/img/daynguon 1.png",
+      img: <Image resizeMode="contain" style={styles.img} source={require('./assets/img/daynguon_1.png')}></Image>,
     },
     {
       id: 3,
-      img: "../Lab6/assets/img/dauchuyendoipsps2 1.png",
+      img: <Image resizeMode="contain" style={styles.img} source={require('./assets/img/dauchuyendoipsps2_1.png')}></Image>,
     },
     {
       id: 4,
-      img: "../Lab6/assets/img/dauchuyendoi 1.png",
+      img: <Image resizeMode="contain" style={styles.img} source={require('./assets/img/dauchuyendoi 1.png')}></Image>
     },
     {
       id: 5,
-      img: "../Lab6/assets/img/carbusbtops2 1.png",
+      img: <Image resizeMode="contain" style={styles.img} source={require('./assets/img/carbusbtops2_1.png')}></Image>,
     },
     {
       id: 6,
-      img: "../Lab6/assets/img/daucam 1.png"
+      img: <Image resizeMode="contain" style={styles.img} source={require('./assets/img/daucam_1.png')}></Image>
     }
   ];
 
@@ -41,12 +41,12 @@ export default function Screen2(props) {
         <TouchableOpacity>
           <View style={styles.items}>
             <View style={styles.item}>
-              <Image resizeMode="contain" style={styles.img} source={require('${obj.img}')}></Image>
+              ${obj.img}
               <Text>Cáp chuyển từ Cổng{"\n"} USB sang PS2../Lab6.</Text>
               <Image
                   style={{width: 106, height: 13}}
                   resizeMode="contain"
-                  source={require("../img/Group 4.png")}
+                  source={require("./assets/img/Group_4.png")}
               ></Image>
               <View style={{flexDirection: "row"}}>
                 <Text style={{fontSize: 12, fontWeight: 700}}>69.900 đ</Text>
@@ -66,23 +66,23 @@ export default function Screen2(props) {
   };
 
   return (
-      <SafeAreaView >
+      <SafeAreaView style={{alignItems: "center"}}>
         <View style={{flexDirection:'row',backgroundColor:  '#1BA9FF', padding: 10,width:415,height:45,position:'fixed'}}>
           <Text style={{width: '35.68px',height: '12.16px', alignItems:'center',justifyContent:'center',top:10,left:180,color:'white'}}>
             <TouchableOpacity>
               <Text style={{ width: '192px',height: '30px', backgroundColor: 'white', padding:10,top:-10 ,left:-100}} >
                 <Text style={{width: '35.68px',color:'black',top:-10}}>Dây chuyển USB</Text>
-                <Image style={styles.itemImg2} source={require('../img/search.png')} />
+                <Image style={styles.itemImg2} source={require('./assets/img/search.png')} />
               </Text>
             </TouchableOpacity>
             <View style={{borderWidth: 1,borderRadius: 45,height: 20,width: 20,top: -45,left: 143,backgroundColor:'red'}}></View>
           </Text>
-          <Image style={styles.itemImg} source={require('../img/arrow.png')} />
-          <Image style={styles.itemImg1} source={require('../img/bi_cart.png')} />
-          <Image style={styles.itemImg3} source={require('../img/3cham.png')} />
+          <Image style={styles.itemImg} source={require('./assets/img/arrow.png')} />
+          <Image style={styles.itemImg1} source={require('./assets/img/bi_cart.png')} />
+          <Image style={styles.itemImg3} source={require('./assets/img/3cham.png')} />
         </View>
 
-        <FlatList data={DATA} numColumns={2} renderItem={ ({item}) => <Item obj={item}></Item> } keyExtractor={(item) => item.id}</FlatList>
+        <FlatList data={DATA} numColumns={2} renderItem={ ({item}) => <Item obj={item}></Item> } keyExtractor={(item) => item.id}></FlatList>
 
         <View style={{flexDirection:'row',backgroundColor:  '#1BA9FF', padding: 10,width:415,height:65,position:'fixed',top:800}}>
           <Image style={{width:40,height:40,top:2,left:170}} source={{uri:'https://img.icons8.com/fluency-systems-regular/48/home--v1.png'}} />
@@ -95,6 +95,7 @@ export default function Screen2(props) {
 const styles = StyleSheet.create({
   container:{
     flex:1,
+    alignItems: "center",
   },
   itemImg:{
     width: 24,
